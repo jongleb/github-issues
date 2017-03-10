@@ -27,6 +27,7 @@
     "angular2-markdown": "^1.5.0",
     "bootstrap": "^4.0.0-alpha.6",
     "core-js": "^2.4.1",
+    "express": "^4.15.2",
     "immutable": "^3.8.1",
     "lodash": "^4.17.4",
     "ngrx-store-freeze": "^0.1.9",
