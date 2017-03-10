@@ -1,0 +1,4 @@
+.description-issue{
+  max-height: 200px;
+  overflow-y: auto;
+}

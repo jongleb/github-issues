@@ -1,0 +1,21 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item"
+        [ngClass]="{disabled: current > 1}"
+        (click)="previous()"
+        >
+      <a class="page-link" href="#">Previous</a>
+    </li>
+    <li class="page-item"
+        (click)="pageChanged.emit(i)"
+        [ngClass]="{active: i === current, disabled: loading}"
+        *ngFor="let i of pageCount">
+      <a class="page-link" href="#">{{i}}</a>
+    </li>
+    <li class="page-item"
+        *ngIf="!loading && hasMore"
+        (click)="next()">
+      <a class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>

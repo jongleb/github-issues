@@ -1,0 +1,11 @@
+<div *ngIf="issue">
+  <h4 class="card-title">
+    {{issue.title}}
+    <span class="badge badge-pill badge-success" *ngIf="issue.state === 'open'">Open</span>
+    <span class="badge badge-pill badge-danger" *ngIf="issue.state === 'closed'">Closed</span>
+  </h4>
+  <h5>opened this issue created_at 243.43, comments 2 <a><b>Who</b></a></h5>
+  <div class="description-issue">
+    <markdown *ngIf="issue.body" [data]="issue.body"></markdown>
+  </div>
+</div>

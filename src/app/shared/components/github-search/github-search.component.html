@@ -1,0 +1,14 @@
+<div class="input-group">
+  <input
+    #searchBox
+    type="text"
+    class="form-control"
+    (keyup)="inputChange(searchBox.value)"
+    (keydown)="inputChange(searchBox.value)"
+    placeholder="Example: username/repository">
+  <span
+    (click)="search(searchBox.value)"
+    class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go!</button>
+  </span>
+</div>

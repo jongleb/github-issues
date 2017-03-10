@@ -1,0 +1,20 @@
+<h1 class="cover-heading">Search issues.</h1>
+<shared-github-search (onSearch)="onSearch($event)"
+                      (onInputChange)="onInputChange($event)"></shared-github-search>
+<shared-github-repo-list
+  (onItemSelect)="onSearch($event.full_name)"
+  *ngIf="(searchIssues$ | async)?.typing"
+  [list]="repositories$ | async"></shared-github-repo-list>
+<shared-preloader
+  *ngIf="(searchIssues$ | async)?.loadingIssues"></shared-preloader>
+<ng-container *ngIf="!!((searchIssues$ | async)?.issues.length)">
+  <shared-github-issues-list
+    [repositoryFull]="(searchIssues$ | async)?.text"
+    [list]="issues$ | async"></shared-github-issues-list>
+  <core-pagination-buttons
+    [perPage]="(searchIssues$ | async)?.per_page"
+    [total]="(searchIssues$ | async)?.totalIssues"
+    [current]="(searchIssues$ | async)?.page"
+    [loading]="(searchIssues$ | async)?.loadingIssues"
+    (pageChanged)="pageChanged($event)"></core-pagination-buttons>
+</ng-container>

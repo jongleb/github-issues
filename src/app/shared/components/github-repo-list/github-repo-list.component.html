@@ -1,0 +1,14 @@
+<div class="list-group" style="overflow-y: auto; max-height: 300px" *ngIf="!!list.length">
+  <div>
+    <a href="#"
+       class="list-group-item list-group-item-action flex-column align-items-start"
+       (click)="itemSelect(item)"
+       *ngFor="let item of list">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{item.full_name}}</h5>
+        <small>{{item.created_at}}</small>
+      </div>
+      <small>{{item.homepage}}</small>
+    </a>
+  </div>
+</div>
